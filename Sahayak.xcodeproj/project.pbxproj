@@ -20,6 +20,11 @@
 		033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5872C68C1CB00705C97 /* Shapes.swift */; };
 		033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5892C68C2C300705C97 /* TextFieldInput.swift */; };
 		033FD58F2C68CBFC00705C97 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD58E2C68CBFC00705C97 /* JSON.swift */; };
+		033FD5942C68CC9400705C97 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5902C68CC9400705C97 /* ApiError.swift */; };
+		033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5912C68CC9400705C97 /* ApiRequest.swift */; };
+		033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5922C68CC9400705C97 /* HTTPMethods.swift */; };
+		033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5932C68CC9400705C97 /* NetworkService.swift */; };
+		033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		033FD5872C68C1CB00705C97 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		033FD5892C68C2C300705C97 /* TextFieldInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInput.swift; sourceTree = "<group>"; };
 		033FD58E2C68CBFC00705C97 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		033FD5902C68CC9400705C97 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		033FD5912C68CC9400705C97 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		033FD5922C68CC9400705C97 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		033FD5932C68CC9400705C97 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,11 @@
 		033FD5772C67C9B300705C97 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				033FD5902C68CC9400705C97 /* ApiError.swift */,
+				033FD5912C68CC9400705C97 /* ApiRequest.swift */,
+				033FD5922C68CC9400705C97 /* HTTPMethods.swift */,
+				033FD5932C68CC9400705C97 /* NetworkService.swift */,
+				033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -269,12 +284,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033FD5942C68CC9400705C97 /* ApiError.swift in Sources */,
 				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
+				033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */,
 				033FD58F2C68CBFC00705C97 /* JSON.swift in Sources */,
 				033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */,
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
+				033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */,
+				033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */,
 				033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */,
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
+				033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */,
 				033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */,
 				033FD57E2C68BE2F00705C97 /* Navigator.swift in Sources */,
 				033FD57C2C68BDA300705C97 /* Binding.swift in Sources */,

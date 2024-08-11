@@ -9,7 +9,7 @@
 import SwiftUI
 
 // MARK: Binding <String> Extension
-extension Binding where Value == String {
+public extension Binding where Value == String {
     func limit(_ length: Int) -> Self {
         if self.wrappedValue.count > length {
             DispatchQueue.main.async {

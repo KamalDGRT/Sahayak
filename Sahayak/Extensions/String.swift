@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     //To check text field or String is blank or not
     var isBlank: Bool {
         get {
@@ -22,12 +22,18 @@ extension String {
         }
     }
     
-    
     //Validate Email
     var isEmail: Bool {
         do {
-            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
-            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+            let regex = try NSRegularExpression(
+                pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+                options: .caseInsensitive
+            )
+            return regex.firstMatch(
+                in: self,
+                options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                range: NSMakeRange(0, self.count)
+            ) != nil
         } catch {
             return false
         }
@@ -35,7 +41,7 @@ extension String {
 }
 
 
-extension String {
+public extension String {
     func convertDateFormat(
         from sourceFormat: String = "yyyy-MM-dd'T'HH:mm:ss",
         to destinationFormat: String = "dd-MM-yyyy"
