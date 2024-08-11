@@ -30,6 +30,12 @@
 		033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59F2C68E45E00705C97 /* TappableIcon.swift */; };
 		033FD5A42C68EF4800705C97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5A32C68EF4800705C97 /* Bundle.swift */; };
 		033FD5A62C68F02F00705C97 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5A52C68F02F00705C97 /* UIDevice.swift */; };
+		033FD5A92C68FBE400705C97 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5A82C68FBE400705C97 /* CacheManager.swift */; };
+		033FD5AB2C68FC5600705C97 /* PixieImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5AA2C68FC5600705C97 /* PixieImageViewModel.swift */; };
+		033FD5AD2C68FCBB00705C97 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5AC2C68FCBB00705C97 /* ImageUtils.swift */; };
+		033FD5AF2C68FE3500705C97 /* PixieCacheKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5AE2C68FE3500705C97 /* PixieCacheKit.swift */; };
+		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
+		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,12 @@
 		033FD59F2C68E45E00705C97 /* TappableIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableIcon.swift; sourceTree = "<group>"; };
 		033FD5A32C68EF4800705C97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		033FD5A52C68F02F00705C97 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		033FD5A82C68FBE400705C97 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		033FD5AA2C68FC5600705C97 /* PixieImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImageViewModel.swift; sourceTree = "<group>"; };
+		033FD5AC2C68FCBB00705C97 /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
+		033FD5AE2C68FE3500705C97 /* PixieCacheKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheKit.swift; sourceTree = "<group>"; };
+		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
+		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 		033FD55E2C67C96700705C97 /* Sahayak */ = {
 			isa = PBXGroup;
 			children = (
+				033FD5A72C68FAFE00705C97 /* ImageCacheManager */,
 				033FD5782C67C9BF00705C97 /* Extensions */,
 				033FD5772C67C9B300705C97 /* Network */,
 				033FD5762C67C9AC00705C97 /* UI */,
@@ -196,6 +209,19 @@
 				033FD59F2C68E45E00705C97 /* TappableIcon.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		033FD5A72C68FAFE00705C97 /* ImageCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				033FD5A82C68FBE400705C97 /* CacheManager.swift */,
+				033FD5AA2C68FC5600705C97 /* PixieImageViewModel.swift */,
+				033FD5AC2C68FCBB00705C97 /* ImageUtils.swift */,
+				033FD5AE2C68FE3500705C97 /* PixieCacheKit.swift */,
+				03FD75692C69180300406FC8 /* PixieCacheManager.swift */,
+				03FD756B2C69184C00406FC8 /* PixieImage.swift */,
+			);
+			path = ImageCacheManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,20 +333,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033FD5AB2C68FC5600705C97 /* PixieImageViewModel.swift in Sources */,
 				033FD5942C68CC9400705C97 /* ApiError.swift in Sources */,
 				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
+				033FD5AD2C68FCBB00705C97 /* ImageUtils.swift in Sources */,
 				033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */,
 				033FD5A42C68EF4800705C97 /* Bundle.swift in Sources */,
 				033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */,
 				033FD58F2C68CBFC00705C97 /* JSON.swift in Sources */,
 				033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */,
+				033FD5AF2C68FE3500705C97 /* PixieCacheKit.swift in Sources */,
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
+				03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */,
 				033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */,
 				033FD59D2C68E2C300705C97 /* MaterialButton.swift in Sources */,
 				033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */,
 				033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */,
 				033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */,
+				033FD5A92C68FBE400705C97 /* CacheManager.swift in Sources */,
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
+				03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */,
 				033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */,
 				033FD5A62C68F02F00705C97 /* UIDevice.swift in Sources */,
 				033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */,

@@ -5,7 +5,7 @@
 //  Created by Kamal Sharma on 11/08/24.
 //
 
-import Foundation
+import UIKit
 
 public typealias ApiSuccessResponse<T: Codable> = (T, HTTPStatusCode) -> Void
 public typealias ApiErrorResponse = (ApiError, HTTPStatusCode) -> Void
@@ -94,7 +94,7 @@ public struct NetworkService {
         let dataTask = urlSession.dataTask(with: webRequest) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let apiResponse = response as? HTTPURLResponse,
-                    let httpStatusCode = HTTPStatusCode(rawValue: apiResponse.statusCode) else {
+                      let httpStatusCode = HTTPStatusCode(rawValue: apiResponse.statusCode) else {
                     apiFailure(.badResponse, .badRequest)
                     return
                 }
@@ -120,4 +120,28 @@ public struct NetworkService {
         } // urlSession
         dataTask.resume()
     } // request
+    
+    
+    /// Asynchronously downloads an image from a URL.
+    ///
+    /// - Parameter urlString: The URL string from which to download the image.
+    /// - Returns: A `UIImage` object representing the downloaded image.
+    /// - Throws: An error if the URL is invalid or if there's an issue with downloading or decoding the image data.
+    func asyncImageDownload(urlString: String) async throws -> UIImage {
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        
+        let data = try? await URLSession.shared.data(from: url)
+        
+        guard let data else {
+            throw URLError(.cannotDecodeRawData)
+        }
+        
+        guard let image = UIImage(data: data.0) else {
+            throw URLError(.cannotDecodeRawData)
+        }
+        
+        return image
+    }
 }
