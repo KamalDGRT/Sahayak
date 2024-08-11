@@ -28,4 +28,35 @@ public struct ApiRequest {
     
     /// The form data for request type where the content is of type `application/x-www-form-urlencoded`
     var formData: [String: String]? = nil
+    
+    public init(
+        method: HTTPMethod,
+        baseUrl: String = "",
+        endPoint: String = "",
+        requestHeaders: [String : String]? = nil,
+        requestBody: [String : Any]? = nil,
+        urlQueryParameters: [String : String]? = nil,
+        formData: [String : String]? = nil
+    ) {
+        self.method = method
+        self.baseUrl = baseUrl
+        self.endPoint = endPoint
+        self.requestHeaders = requestHeaders
+        self.requestBody = requestBody
+        self.urlQueryParameters = urlQueryParameters
+        self.formData = formData
+    }
+    
+    public func toString() -> String {
+        var str = "{\n"
+        str += "method: " + method.rawValue + ",\n"
+        str += "baseUrl: " + baseUrl + ",\n"
+        str += "endPoint: " + endPoint + ",\n"
+        str += "requestHeaders: " + (requestHeaders?.toJsonString ?? "") + ",\n"
+        str += "requestBody: " + (requestBody?.toJsonString ?? "") + ",\n"
+        str += "urlQueryParameters: " + (urlQueryParameters?.toJsonString ?? "") + ",\n"
+        str += "formData: " + (formData?.toJsonString ?? "") + "\n"
+        str += "}\n"
+        return str
+    }
 }

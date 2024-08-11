@@ -12,16 +12,16 @@ public typealias ApiErrorResponse = (ApiError, HTTPStatusCode) -> Void
 
 public struct NetworkService {
     
-    static let shared = NetworkService()
+    public static let shared = NetworkService()
     
     // Singleton that Only allows one instance of this class
     private init() {}
     
     /// Default headers to include in your request. You can set this preferrably in the `AppDelegate`.
-    var defaultHeaders: [String: String]? = nil
+    public var defaultHeaders: [String: String]? = nil
     
     /// With this, you can set your own configuration for the Network Calls in your `AppDelegate`.
-    var urlSessionConfig: URLSessionConfiguration?
+    public var urlSessionConfig: URLSessionConfiguration?
     
     private var urlSession: URLSession {
         if let urlSessionConfig {
@@ -35,11 +35,16 @@ public struct NetworkService {
         }
     }
     
-    func request<T: Codable>(
+    public func request<T: Codable>(
         _ apiRequest: ApiRequest,
         apiSuccess: @escaping(ApiSuccessResponse<T>),
         apiFailure: @escaping(ApiErrorResponse)
     ) {
+        
+        guard apiRequest.baseUrl.isNotBlank else {
+            apiFailure(.emptyBaseUrl, .badRequest)
+            return
+        }
         
         var urlComponents = URLComponents(string: apiRequest.baseUrl)
         urlComponents?.path = apiRequest.endPoint
@@ -69,8 +74,6 @@ public struct NetworkService {
                 requestHeaders[reqHead.key] = reqHead.value
             }
         }
-        Log.i("---- Request Headers ----")
-        Log.i(requestHeaders.toJsonString)
         
         /// creating the actual Swift-Style API Request
         // Construct our web request.
@@ -95,7 +98,7 @@ public struct NetworkService {
             DispatchQueue.main.async {
                 guard let apiResponse = response as? HTTPURLResponse,
                       let httpStatusCode = HTTPStatusCode(rawValue: apiResponse.statusCode) else {
-                    apiFailure(.badResponse, .badRequest)
+                    apiFailure(.invalidResponse, .badRequest)
                     return
                 }
                 
@@ -127,7 +130,7 @@ public struct NetworkService {
     /// - Parameter urlString: The URL string from which to download the image.
     /// - Returns: A `UIImage` object representing the downloaded image.
     /// - Throws: An error if the URL is invalid or if there's an issue with downloading or decoding the image data.
-    func asyncImageDownload(urlString: String) async throws -> UIImage {
+    public func asyncImageDownload(urlString: String) async throws -> UIImage {
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
         }

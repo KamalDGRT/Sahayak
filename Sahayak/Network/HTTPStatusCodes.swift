@@ -79,7 +79,7 @@ public enum HTTPStatusCode: Int, Codable {
     case notExtended = 510
     case networkAuthenticationRequired = 511
 
-    var description: String {
+    public var description: String {
         switch self {
         // 1xx Informational
         case .continue: return "Continue"

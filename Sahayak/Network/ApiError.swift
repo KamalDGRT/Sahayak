@@ -9,6 +9,9 @@ import Foundation
 
 /// An error resulting from an operation failing during normal APIClient operation.
 public enum ApiError: Error {
+    /// The baseUrl for the API call is empty.
+    case emptyBaseUrl
+    
     /// An error occurred while creating the request body.
     case badRequestBody
     
@@ -19,7 +22,7 @@ public enum ApiError: Error {
     case malformedUrl
     
     ///  Error occured while trying to parse the API response.
-    case badResponse
+    case invalidResponse
     
     ///  Typical Interal Server error.
     case internalServerError
@@ -32,14 +35,16 @@ extension ApiError: CustomStringConvertible {
     /// Returns a string describing the error.
     public var description: String {
         switch self {
+        case .emptyBaseUrl:
+            return "The baseUrl for the API call is empty."
         case .badRequestBody:
             return "The request body has not been created in the way the API expects."
         case .decoding:
             return "An error occurred during decoding the API response to a suitable class/struct."
         case .malformedUrl:
             return "The request URL is not proper/valid."
-        case .badResponse:
-            return "An error occurred while parsing the API response."
+        case .invalidResponse:
+            return "The HTTPURLResponse is nil/empty. Unable to unwrap it to a proper response."
         case .internalServerError:
             return "Typical Internal server "
         case .serverErrorWithData(let data):
