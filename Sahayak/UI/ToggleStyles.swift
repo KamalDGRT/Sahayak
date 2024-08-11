@@ -7,11 +7,16 @@
 
 import SwiftUI
 
-struct CheckmarkToggleStyle: ToggleStyle {
-    var onColor = Color.green
-    var offColor = Color.gray
+public struct CheckmarkToggleStyle: ToggleStyle {
+    var onColor: Color
+    var offColor: Color
     
-    func makeBody(configuration: Configuration) -> some View {
+    init(_ onColor: Color = Color.green, _ offColor: Color = Color.gray) {
+        self.onColor = onColor
+        self.offColor = offColor
+    }
+    
+    public func makeBody(configuration: Configuration) -> some View {
         Button(action: {
             configuration.isOn.toggle()
         }) {
@@ -41,11 +46,16 @@ struct CheckmarkToggleStyle: ToggleStyle {
     }
 }
 
-struct CustomToggleStyle: ToggleStyle {
-    var onColor = Color.green
-    var offColor = Color.gray
+public struct CustomToggleStyle: ToggleStyle {
+    var onColor: Color
+    var offColor: Color
     
-    func makeBody(configuration: Configuration) -> some View {
+    init(_ onColor: Color = Color.green, _ offColor: Color = Color.gray) {
+        self.onColor = onColor
+        self.offColor = offColor
+    }
+    
+    public func makeBody(configuration: Configuration) -> some View {
         Button {
             configuration.isOn.toggle()
         } label: {

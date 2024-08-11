@@ -15,6 +15,21 @@ public enum MaterialTextFieldStyle {
     case outline
 }
 
+public struct PlaceHolder {
+    var text: String = ""
+    var textSize: CGFloat = 16.0
+    var padding: CGFloat = 0.0
+    var backgroundColor: Color = .clear
+    var offset: CGFloat = 0.0
+    var isVisible = true
+}
+
+public struct ErrorLabel {
+    var isVisible = false
+    var isFailure = false
+    var description = ""
+}
+
 public struct MaterialFont {
     var fontName: String
     var fontSize: CGFloat
@@ -42,7 +57,7 @@ public struct MaterialBorderColor {
     var failure = Color.red
 }
 
-public class MaterialTextFieldNotifier: ObservableObject {
+class MaterialTextFieldNotifier: ObservableObject {
     
     @Published var leftView: AnyView?
     @Published var rightView: AnyView?

@@ -8,21 +8,6 @@
 
 import SwiftUI
 
-public struct PlaceHolder {
-    var text: String = ""
-    var textSize: CGFloat = 16.0
-    var padding: CGFloat = 0.0
-    var backgroundColor: Color = .clear
-    var offset: CGFloat = 0.0
-    var isVisible = true
-}
-
-public struct ErrorLabel {
-    var isVisible = false
-    var isFailure = false
-    var description = ""
-}
-
 /// A view mimicing the material text view provided by Google with various customizations
 public struct MaterialTextField: View {
     
