@@ -2,8 +2,6 @@
 //  ApiRequest.swift
 //  Sahayak
 //
-//  Created by Kamal Sharma on 11/08/24.
-//
 
 import Foundation
 

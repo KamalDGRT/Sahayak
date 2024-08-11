@@ -1,11 +1,9 @@
 //
 //  Navigator.swift
 //  Sahayak
-//
-//  Created by Kamal Sharma on 11/08/24.
-//
 // https://medium.com/@uwaisalqadri/swiftui-view-uikit-navigation-74aa22fc0e0
 // https://github.com/uwaisalqadri/SwiftUIViewUIKitNavigation
+//
 
 import SwiftUI
 

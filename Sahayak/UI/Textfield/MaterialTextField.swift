@@ -1,10 +1,8 @@
 //
 //  MaterialTextField.swift
 //  Sahayak
+//  Reference github.com/norrisboat/MaterialTextFieldSwiftUI
 //
-//  Created by Kamal Sharma on 11/08/24.
-//
-// Reference github.com/norrisboat/MaterialTextFieldSwiftUI
 
 import SwiftUI
 

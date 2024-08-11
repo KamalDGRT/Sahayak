@@ -1,10 +1,8 @@
 //
 //  Logger.swift
 //  Sahayak
-//
-//  Created by Kamal Sharma on 11/08/24.
-//
 // MIT License: https://github.com/sauvikdolui/swiftlogger.git
+//
 
 import Foundation
 

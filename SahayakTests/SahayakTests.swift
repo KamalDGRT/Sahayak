@@ -2,8 +2,6 @@
 //  SahayakTests.swift
 //  SahayakTests
 //
-//  Created by Kamal Sharma on 10/08/24.
-//
 
 import XCTest
 @testable import Sahayak

@@ -1,8 +1,7 @@
 //
 //  PixieImage.swift
 //  Sahayak
-//
-//  Created by Kamal Sharma on 11/08/24.
+//  Reference & Credits: https://github.com/aumChauhan/PixieCacheKit.git
 //
 
 import SwiftUI
