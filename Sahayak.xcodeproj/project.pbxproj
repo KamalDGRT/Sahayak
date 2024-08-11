@@ -11,6 +11,14 @@
 		033FD5672C67C96800705C97 /* Sahayak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033FD55C2C67C96700705C97 /* Sahayak.framework */; };
 		033FD56C2C67C96800705C97 /* SahayakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD56B2C67C96800705C97 /* SahayakTests.swift */; };
 		033FD56D2C67C96800705C97 /* Sahayak.h in Headers */ = {isa = PBXBuildFile; fileRef = 033FD55F2C67C96700705C97 /* Sahayak.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		033FD57A2C68BC9B00705C97 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5792C68BC9B00705C97 /* String.swift */; };
+		033FD57C2C68BDA300705C97 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD57B2C68BDA300705C97 /* Binding.swift */; };
+		033FD57E2C68BE2F00705C97 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD57D2C68BE2F00705C97 /* Navigator.swift */; };
+		033FD5812C68BEFC00705C97 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5802C68BEFC00705C97 /* Logger.swift */; };
+		033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5832C68C10F00705C97 /* MaterialTextField.swift */; };
+		033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5852C68C14200705C97 /* MaterialTextFieldUtils.swift */; };
+		033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5872C68C1CB00705C97 /* Shapes.swift */; };
+		033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5892C68C2C300705C97 /* TextFieldInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		033FD5602C67C96700705C97 /* Sahayak.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Sahayak.docc; sourceTree = "<group>"; };
 		033FD5662C67C96800705C97 /* SahayakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SahayakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033FD56B2C67C96800705C97 /* SahayakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SahayakTests.swift; sourceTree = "<group>"; };
+		033FD5792C68BC9B00705C97 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		033FD57B2C68BDA300705C97 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		033FD57D2C68BE2F00705C97 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		033FD5802C68BEFC00705C97 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		033FD5832C68C10F00705C97 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		033FD5852C68C14200705C97 /* MaterialTextFieldUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextFieldUtils.swift; sourceTree = "<group>"; };
+		033FD5872C68C1CB00705C97 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		033FD5892C68C2C300705C97 /* TextFieldInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +90,7 @@
 				033FD5782C67C9BF00705C97 /* Extensions */,
 				033FD5772C67C9B300705C97 /* Network */,
 				033FD5762C67C9AC00705C97 /* UI */,
+				033FD57F2C68BEE900705C97 /* Utils */,
 				033FD55F2C67C96700705C97 /* Sahayak.h */,
 				033FD5602C67C96700705C97 /* Sahayak.docc */,
 			);
@@ -91,6 +108,9 @@
 		033FD5762C67C9AC00705C97 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				033FD5822C68C0FF00705C97 /* Textfield */,
+				033FD57D2C68BE2F00705C97 /* Navigator.swift */,
+				033FD5872C68C1CB00705C97 /* Shapes.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -105,8 +125,28 @@
 		033FD5782C67C9BF00705C97 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				033FD5792C68BC9B00705C97 /* String.swift */,
+				033FD57B2C68BDA300705C97 /* Binding.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		033FD57F2C68BEE900705C97 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				033FD5802C68BEFC00705C97 /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		033FD5822C68C0FF00705C97 /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				033FD5832C68C10F00705C97 /* MaterialTextField.swift */,
+				033FD5852C68C14200705C97 /* MaterialTextFieldUtils.swift */,
+				033FD5892C68C2C300705C97 /* TextFieldInput.swift */,
+			);
+			path = Textfield;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
+				033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */,
+				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
+				033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */,
+				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
+				033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */,
+				033FD57E2C68BE2F00705C97 /* Navigator.swift in Sources */,
+				033FD57C2C68BDA300705C97 /* Binding.swift in Sources */,
 				033FD5612C67C96700705C97 /* Sahayak.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +429,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,10 +441,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamaldgrt.Sahayak;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,6 +467,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,16 +479,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamaldgrt.Sahayak;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		033FD5742C67C96800705C97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B9W7594SR5;
@@ -451,6 +510,7 @@
 		033FD5752C67C96800705C97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B9W7594SR5;
