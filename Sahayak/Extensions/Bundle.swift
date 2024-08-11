@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Bundle {
+public extension Bundle {
     /// Returns json content present in a file to its corresponding JSON codable struct.
     /// - Parameter file: Name of the JSON file
     /// - Returns: the decoded file content to corrresponding Codable struct
