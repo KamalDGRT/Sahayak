@@ -28,6 +28,7 @@
 		033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59A2C68E17800705C97 /* ToggleStyles.swift */; };
 		033FD59D2C68E2C300705C97 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59C2C68E2C300705C97 /* MaterialButton.swift */; };
 		033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59F2C68E45E00705C97 /* TappableIcon.swift */; };
+		033FD5A42C68EF4800705C97 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5A32C68EF4800705C97 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		033FD59A2C68E17800705C97 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 		033FD59C2C68E2C300705C97 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		033FD59F2C68E45E00705C97 /* TappableIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableIcon.swift; sourceTree = "<group>"; };
+		033FD5A32C68EF4800705C97 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				033FD5792C68BC9B00705C97 /* String.swift */,
 				033FD57B2C68BDA300705C97 /* Binding.swift */,
+				033FD5A32C68EF4800705C97 /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				033FD5942C68CC9400705C97 /* ApiError.swift in Sources */,
 				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
 				033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */,
+				033FD5A42C68EF4800705C97 /* Bundle.swift in Sources */,
 				033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */,
 				033FD58F2C68CBFC00705C97 /* JSON.swift in Sources */,
 				033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */,
