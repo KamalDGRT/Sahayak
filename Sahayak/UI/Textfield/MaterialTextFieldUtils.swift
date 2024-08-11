@@ -16,10 +16,22 @@ public enum MaterialTextFieldStyle {
 }
 
 public struct MaterialFont {
-    var fontName: String = ""
-    var fontSize: CGFloat = 16.0
-    var fontColor: Color = .black
-    var backgroundColor: Color = .white
+    var fontName: String
+    var fontSize: CGFloat
+    var fontColor: Color
+    var backgroundColor: Color
+    
+    init(
+        _ fontName: String = "",
+        _ fontSize: CGFloat = 16.0,
+        _ fontColor: Color = .black,
+        _ backgroundColor: Color = .white
+    ) {
+        self.fontName = fontName
+        self.fontSize = fontSize
+        self.fontColor = fontColor
+        self.backgroundColor = backgroundColor
+    }
 }
 
 public struct MaterialBorderColor {
@@ -48,8 +60,8 @@ public class MaterialTextFieldNotifier: ObservableObject {
     @Published var borderColor = MaterialBorderColor()
     @Published var placeholderFont = MaterialFont()
     @Published var textFont = MaterialFont()
-    @Published var errorTextFont = MaterialFont(fontSize: 12.0, fontColor: Color.red)
-    @Published var helperTextFont = MaterialFont(fontSize: 12.0)
+    @Published var errorTextFont = MaterialFont()
+    @Published var helperTextFont = MaterialFont()
     
     @Published var onSubmit: () -> Void = {}
 }
