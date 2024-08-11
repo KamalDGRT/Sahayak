@@ -25,6 +25,7 @@
 		033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5922C68CC9400705C97 /* HTTPMethods.swift */; };
 		033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5932C68CC9400705C97 /* NetworkService.swift */; };
 		033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */; };
+		033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59A2C68E17800705C97 /* ToggleStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		033FD5922C68CC9400705C97 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		033FD5932C68CC9400705C97 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		033FD59A2C68E17800705C97 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				033FD5822C68C0FF00705C97 /* Textfield */,
 				033FD57D2C68BE2F00705C97 /* Navigator.swift */,
 				033FD5872C68C1CB00705C97 /* Shapes.swift */,
+				033FD59A2C68E17800705C97 /* ToggleStyles.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				033FD5942C68CC9400705C97 /* ApiError.swift in Sources */,
 				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
 				033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */,
+				033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */,
 				033FD58F2C68CBFC00705C97 /* JSON.swift in Sources */,
 				033FD5842C68C10F00705C97 /* MaterialTextField.swift in Sources */,
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
