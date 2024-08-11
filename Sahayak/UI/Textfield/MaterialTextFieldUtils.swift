@@ -16,18 +16,44 @@ public enum MaterialTextFieldStyle {
 }
 
 public struct PlaceHolder {
-    var text: String = ""
-    var textSize: CGFloat = 16.0
-    var padding: CGFloat = 0.0
-    var backgroundColor: Color = .clear
-    var offset: CGFloat = 0.0
-    var isVisible = true
+    var text: String
+    var textSize: CGFloat
+    var padding: CGFloat
+    var backgroundColor: Color
+    var offset: CGFloat
+    var isVisible: Bool
+    
+    public init(
+        _ text: String = "",
+        _ textSize: CGFloat = 16.0,
+        _ padding: CGFloat = 0.0,
+        _ backgroundColor: Color = .clear,
+        _ offset: CGFloat = .zero,
+        _ isVisible: Bool = true
+    ) {
+        self.text = text
+        self.textSize = textSize
+        self.padding = padding
+        self.backgroundColor = backgroundColor
+        self.offset = offset
+        self.isVisible = isVisible
+    }
 }
 
 public struct ErrorLabel {
-    var isVisible = false
-    var isFailure = false
-    var description = ""
+    var text: String
+    var isVisible: Bool
+    var isFailure: Bool
+   
+    public init(
+        _ text: String,
+        _ isVisible: Bool,
+        _ isFailure: Bool
+    ) {
+        self.text = text
+        self.isVisible = isVisible
+        self.isFailure = isFailure
+    }
 }
 
 public struct MaterialFont {
@@ -36,11 +62,11 @@ public struct MaterialFont {
     var fontColor: Color
     var backgroundColor: Color
     
-    init(
-        _ fontName: String = "",
-        _ fontSize: CGFloat = 16.0,
-        _ fontColor: Color = .black,
-        _ backgroundColor: Color = .white
+    public init(
+        _ fontName: String,
+        _ fontSize: CGFloat,
+        _ fontColor: Color,
+        _ backgroundColor: Color
     ) {
         self.fontName = fontName
         self.fontSize = fontSize
@@ -71,12 +97,12 @@ class MaterialTextFieldNotifier: ObservableObject {
     @Published var maxCharacters: Int = .max
     @Published var showCharacterCounter: Bool = false
     @Published var helperText: String = ""
-    @Published var errorText = ErrorLabel()
+    @Published var errorText = ErrorLabel("", false, false)
     @Published var borderColor = MaterialBorderColor()
-    @Published var placeholderFont = MaterialFont()
-    @Published var textFont = MaterialFont()
-    @Published var errorTextFont = MaterialFont()
-    @Published var helperTextFont = MaterialFont()
+    @Published var placeholderFont = MaterialFont("", 16.0, .black, .white)
+    @Published var textFont = MaterialFont("", 16.0, .black, .white)
+    @Published var errorTextFont = MaterialFont("", 16.0, .black, .white)
+    @Published var helperTextFont = MaterialFont("", 16.0, .black, .white)
     
     @Published var onSubmit: () -> Void = {}
 }

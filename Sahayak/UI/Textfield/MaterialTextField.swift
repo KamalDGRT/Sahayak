@@ -202,7 +202,7 @@ private extension MaterialTextField {
     //MARK: Error View
     func errorView() -> some View {
         // TODO: add with model
-        Text(notifier.errorText.description)
+        Text(notifier.errorText.text)
             .foregroundColor(notifier.errorTextFont.fontColor)
             .font(.custom(notifier.errorTextFont.fontName, size: notifier.errorTextFont.fontSize))
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -396,7 +396,7 @@ public extension MaterialTextField {
     func errorText(isVisible: Bool, isFailure: Bool, description: String) -> Self {
         notifier.errorText.isVisible = isVisible
         notifier.errorText.isFailure = isFailure
-        notifier.errorText.description = description
+        notifier.errorText.text = description
         return self
     }
     

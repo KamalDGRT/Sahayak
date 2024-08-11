@@ -8,7 +8,7 @@
 import SwiftUI
 
 class MaterialButtonNotifier: ObservableObject {
-    var titleFont = MaterialFont()
+    var titleFont = MaterialFont("", 16.0, .black, .white)
     var backgroundColor: Color = .gray
     var height = 45.0
     var cornerRadius = 10.0
@@ -22,7 +22,7 @@ public struct MaterialButton: View {
     
     @ObservedObject private var notifier = MaterialButtonNotifier()
     
-    init(_ title: String, ctaAction: @escaping () -> Void) {
+    public init(_ title: String, ctaAction: @escaping () -> Void) {
         self.title = title
         self.ctaAction = ctaAction
     }

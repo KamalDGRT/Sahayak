@@ -8,16 +8,16 @@
 import Foundation
 
 public struct TextFieldInput {
-    var placeHolder: PlaceHolder
-    var text: String
-    var isFocused: Bool
-    var errorText: ErrorLabel
+    public var text: String
+    public var placeHolder: PlaceHolder
+    public var isFocused: Bool
+    public var errorText: ErrorLabel
     
-    init(
-        _ placeHolder: PlaceHolder = PlaceHolder(text: ""),
-        _ text: String = "",
-        _ isFocused: Bool = false,
-        _ errorText: ErrorLabel = ErrorLabel()
+    public init(
+        text: String,
+        placeHolder: PlaceHolder,
+        isFocused: Bool,
+        errorText: ErrorLabel
     ) {
         self.text = text
         self.isFocused = isFocused

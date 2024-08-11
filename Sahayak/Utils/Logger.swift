@@ -57,7 +57,9 @@ public class Log {
         return false
 #endif
     }
-    
+}
+
+public extension Log {
     // MARK: - Loging methods
     
     

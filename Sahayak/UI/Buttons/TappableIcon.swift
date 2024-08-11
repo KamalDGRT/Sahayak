@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TappableIcon: View {
+public struct TappableIcon: View {
     var iconName: String
     var iconWidth: CGFloat
     var iconHeight: CGFloat
@@ -15,7 +15,7 @@ struct TappableIcon: View {
     var accessibilityIdentifier: String?
     var clickAction: (() -> Void)? /// use closure for callback
     
-    var body: some View {
+    public var body: some View {
         Button(action: {
             clickAction?()
         }) {
@@ -27,7 +27,7 @@ struct TappableIcon: View {
         .disabled(!isTappable)
     }
     
-    init(
+    public init(
         _ iconName: String,
         _ iconWidth: CGFloat,
         _ iconHeight: CGFloat,_
