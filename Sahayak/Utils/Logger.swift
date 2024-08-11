@@ -21,6 +21,17 @@ enum LogEvent: String {
     case v = "[🔬]" // verbose
     case w = "[⚠️]" // warning
     case s = "[🔥]" // severe
+    
+    var description: String {
+        switch self {
+        case .e: "Error"
+        case .i: "Info"
+        case .d: "Debug"
+        case .v: "Verbose"
+        case .w: "Warning"
+        case .s: "Severe"
+        }
+    }
 }
 
 
@@ -67,11 +78,10 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func e( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func e( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.e.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .e, filename, line, funcName))
         }
     }
     
@@ -81,11 +91,10 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func i ( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func i ( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.i.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .i, filename, line, funcName))
         }
     }
     
@@ -95,11 +104,10 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func d( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func d( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.d.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .d, filename, line, funcName))
         }
     }
     
@@ -109,11 +117,10 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func v( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func v( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.v.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .v, filename, line, funcName))
         }
     }
     
@@ -123,11 +130,10 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func w( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func w( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.w.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .w, filename, line, funcName))
         }
     }
     
@@ -137,22 +143,32 @@ public extension Log {
     ///   - object: Object or message to be logged
     ///   - filename: File name from where loggin to be done
     ///   - line: Line number in file from where the logging is done
-    ///   - column: Column number of the log message
     ///   - funcName: Name of the function from where the logging is done
-    class func s( _ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    class func s( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         if isLoggingEnabled {
-            print("\(Date().toString()) \(LogEvent.s.rawValue)[\(sourceFileName(filePath: filename))]:\(line) \(column) \(funcName) -> \(object)")
+            print(content(object, .s, filename, line, funcName))
         }
     }
-    
-    
-    /// Extract the file name from the file path
-    ///
-    /// - Parameter filePath: Full file path in bundle
-    /// - Returns: File Name with extension
-    private class func sourceFileName(filePath: String) -> String {
+}
+
+/// Extract the file name from the file path
+///
+/// - Parameter filePath: Full file path in bundle
+/// - Returns: File Name with extension
+private extension Log {
+    class func sourceFileName(filePath: String) -> String {
         let components = filePath.components(separatedBy: "/")
         return components.isEmpty ? "" : components.last!
+    }
+    
+    class func content(_ object: Any, _ eventType: LogEvent, _ fileName: String, _ line: Int, _ functionName: String) -> String {
+        var str = "\n\n" + eventType.rawValue + " " + eventType.description + "\n"
+        str += "DateTime: " + Date().toString() + "\n"
+        str += "FileName: " + sourceFileName(filePath: fileName) + "\n"
+        str += "Function: " + functionName + "\n"
+        str += "Line    : \(line)" + "\n"
+        str += "Message : \(object)\n\n"
+        return str
     }
 }
 
