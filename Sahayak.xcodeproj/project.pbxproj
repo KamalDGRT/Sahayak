@@ -27,6 +27,7 @@
 		033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */; };
 		033FD59B2C68E17800705C97 /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59A2C68E17800705C97 /* ToggleStyles.swift */; };
 		033FD59D2C68E2C300705C97 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59C2C68E2C300705C97 /* MaterialButton.swift */; };
+		033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD59F2C68E45E00705C97 /* TappableIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		033FD5982C68D0DC00705C97 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		033FD59A2C68E17800705C97 /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 		033FD59C2C68E2C300705C97 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		033FD59F2C68E45E00705C97 /* TappableIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +127,11 @@
 		033FD5762C67C9AC00705C97 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				033FD59E2C68E44F00705C97 /* Buttons */,
 				033FD5822C68C0FF00705C97 /* Textfield */,
 				033FD57D2C68BE2F00705C97 /* Navigator.swift */,
 				033FD5872C68C1CB00705C97 /* Shapes.swift */,
 				033FD59A2C68E17800705C97 /* ToggleStyles.swift */,
-				033FD59C2C68E2C300705C97 /* MaterialButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -179,6 +181,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		033FD59E2C68E44F00705C97 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				033FD59C2C68E2C300705C97 /* MaterialButton.swift */,
+				033FD59F2C68E45E00705C97 /* TappableIcon.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
 				033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */,
 				033FD59D2C68E2C300705C97 /* MaterialButton.swift in Sources */,
+				033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */,
 				033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */,
 				033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */,
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
