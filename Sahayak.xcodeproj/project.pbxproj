@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0331030E2C6A7F48009BB7EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0331030D2C6A7F48009BB7EC /* README.md */; };
 		033FD5612C67C96700705C97 /* Sahayak.docc in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5602C67C96700705C97 /* Sahayak.docc */; };
 		033FD5672C67C96800705C97 /* Sahayak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033FD55C2C67C96700705C97 /* Sahayak.framework */; };
 		033FD56C2C67C96800705C97 /* SahayakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FD56B2C67C96800705C97 /* SahayakTests.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0331030D2C6A7F48009BB7EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		033FD55C2C67C96700705C97 /* Sahayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sahayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		033FD55F2C67C96700705C97 /* Sahayak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sahayak.h; sourceTree = "<group>"; };
 		033FD5602C67C96700705C97 /* Sahayak.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Sahayak.docc; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		033FD5522C67C96700705C97 = {
 			isa = PBXGroup;
 			children = (
+				0331030D2C6A7F48009BB7EC /* README.md */,
 				033FD55E2C67C96700705C97 /* Sahayak */,
 				033FD56A2C67C96800705C97 /* SahayakTests */,
 				033FD55D2C67C96700705C97 /* Products */,
@@ -316,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0331030E2C6A7F48009BB7EC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
