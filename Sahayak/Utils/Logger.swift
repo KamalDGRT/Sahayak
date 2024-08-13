@@ -59,13 +59,7 @@ public class Log {
         return formatter
     }
     
-    private static var isLoggingEnabled: Bool {
-#if DEBUG
-        return true
-#else
-        return false
-#endif
-    }
+    public static var isLoggingEnabled: Bool = true
 }
 
 public extension Log {
@@ -162,12 +156,12 @@ private extension Log {
     }
     
     class func content(_ object: Any, _ eventType: LogEvent, _ fileName: String, _ line: Int, _ functionName: String) -> String {
-        var str = "\n\n" + eventType.rawValue + " " + eventType.description + "\n"
+        var str = "\n" + eventType.rawValue + " " + eventType.description + "\n"
         str += "DateTime: " + Date().toString() + "\n"
         str += "FileName: " + sourceFileName(filePath: fileName) + "\n"
         str += "Function: " + functionName + "\n"
         str += "Line    : \(line)" + "\n"
-        str += "Message : \(object)\n\n"
+        str += "Message : \(object)\n"
         return str
     }
 }

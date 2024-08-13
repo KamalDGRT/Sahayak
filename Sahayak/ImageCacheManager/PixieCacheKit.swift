@@ -58,7 +58,7 @@ public class PixieCacheKit {
     /// Disable debug prints during image operations.
     ///
     /// Use this method to suppress debug print statements during image downloading and retrieval.
-    static func disableDebugPrints() {
+    public static func disableDebugPrints() {
         CacheManager.shared.disableDebugPrint()
     }
 }
