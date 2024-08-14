@@ -8,6 +8,14 @@ import UIKit
 public typealias ApiSuccessResponse<T: Codable> = (T, HTTPStatusCode) -> Void
 public typealias ApiErrorResponse = (ApiError, HTTPStatusCode) -> Void
 
+/// Global Function to print the description provided by the `APIError` along with the status code.
+public func apiErrorDescription(_ error: ApiError, _ statusCode: HTTPStatusCode) -> String {
+    var str = "Failure!!!\n"
+    str += "Error: " + error.description + "\n"
+    str += "Status Code: \(statusCode.rawValue) - " + statusCode.description
+    return str
+}
+
 public struct NetworkService {
     
     public static let shared = NetworkService()

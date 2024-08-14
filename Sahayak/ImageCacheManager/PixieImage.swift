@@ -26,12 +26,12 @@ import SwiftUI
 ///   - cacheKey: The cache key for the fetched image.
 ///
 /// - Note: You can enhance your `PixieImage` view by using SwiftUI view modifiers to customize its appearance and behavior.
-public struct PixieImage<Placeholder>: View where Placeholder : View {
+public struct PixieImage<Placeholder>: View where Placeholder: View {
     
     // MARK: - Properties
     
     let placeholder: Placeholder?
-    @StateObject private var viewModel : PixieImageViewModel
+    @StateObject private var viewModel: PixieImageViewModel
     
     // MARK: - Initializers
     
@@ -68,8 +68,7 @@ public struct PixieImage<Placeholder>: View where Placeholder : View {
             Image(uiImage: image)
                 .resizable()
         } else {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundColor(.gray)
+            Color.gray
         }
     }
 }
