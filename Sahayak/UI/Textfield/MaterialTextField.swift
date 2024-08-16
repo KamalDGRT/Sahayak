@@ -235,7 +235,7 @@ private extension MaterialTextField {
     func background() -> some View {
         switch style {
         case .normal:
-            RoundedCornersShape(corners: [.topLeft, .topRight], radius: 5)
+            RoundedCornersShape([.topLeft, .topRight], 5)
                 .fill(.gray.opacity(0.1))
                 .frame(height: 56)
                 .padding(.bottom, -6)

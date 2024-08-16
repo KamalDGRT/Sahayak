@@ -21,3 +21,4 @@ I would like to sincerely thank these open-source projects.
 - [MaterialTextFieldSwiftUI](https://github.com/norrisboat/MaterialTextFieldSwiftUI) - MIT License
 - [SwiftLogger](https://github.com/sauvikdolui/swiftlogger) - MIT License
 - [Navigator](https://github.com/uwaisalqadri/SwiftUIViewUIKitNavigation)
+- [JWTDecode.swift](https://github.com/auth0/JWTDecode.swift) - MIT License

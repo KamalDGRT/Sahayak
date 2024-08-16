@@ -46,7 +46,7 @@ extension ApiError: CustomStringConvertible {
         case .internalServerError:
             return "Typical Internal server "
         case .serverErrorWithData(let data):
-            return "API call has failed but the server has returned a response.\nResponse: \(data.toString)"
+            return "API call has failed but the server has returned a response.\n\nResponse: \(data.toString)"
         }
     }
 }

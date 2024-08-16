@@ -36,6 +36,10 @@ public extension String {
             return false
         }
     }
+    
+    func repeatString(_ times: Int) -> String {
+        return String(repeating: self, count: times)
+    }
 }
 
 

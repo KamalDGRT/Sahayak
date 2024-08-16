@@ -10,9 +10,10 @@ public typealias ApiErrorResponse = (ApiError, HTTPStatusCode) -> Void
 
 /// Global Function to print the description provided by the `APIError` along with the status code.
 public func apiErrorDescription(_ error: ApiError, _ statusCode: HTTPStatusCode) -> String {
-    var str = "Failure!!!\n"
-    str += "Error: " + error.description + "\n"
+    var str = "\n" + "-".repeatString(10) + "\n"
+    str += "Error: " + error.description + "\n\n"
     str += "Status Code: \(statusCode.rawValue) - " + statusCode.description
+    str += "\n" + "-".repeatString(10) + "\n"
     return str
 }
 
