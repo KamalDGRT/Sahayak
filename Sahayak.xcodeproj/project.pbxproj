@@ -38,6 +38,8 @@
 		03587A1A2C6DF95F0060D409 /* JWTProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A192C6DF95F0060D409 /* JWTProtocol.swift */; };
 		03587A1C2C6DF9C80060D409 /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A1B2C6DF9C80060D409 /* JWTDecode.swift */; };
 		03587A1E2C6DFA070060D409 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */; };
+		03956D122C708F8E00DE8AC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D112C708F8E00DE8AC0 /* Date.swift */; };
+		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
 		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		03587A192C6DF95F0060D409 /* JWTProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTProtocol.swift; sourceTree = "<group>"; };
 		03587A1B2C6DF9C80060D409 /* JWTDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
 		03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
+		03956D112C708F8E00DE8AC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		03956D172C70D57100DE8AC0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +186,7 @@
 				033FD57B2C68BDA300705C97 /* Binding.swift */,
 				033FD5A32C68EF4800705C97 /* Bundle.swift */,
 				033FD5A52C68F02F00705C97 /* UIDevice.swift */,
+				03956D112C708F8E00DE8AC0 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			children = (
 				033FD59C2C68E2C300705C97 /* MaterialButton.swift */,
 				033FD59F2C68E45E00705C97 /* TappableIcon.swift */,
+				03956D172C70D57100DE8AC0 /* CheckBoxView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				033FD5942C68CC9400705C97 /* ApiError.swift in Sources */,
 				033FD5862C68C14200705C97 /* MaterialTextFieldUtils.swift in Sources */,
 				03587A1C2C6DF9C80060D409 /* JWTDecode.swift in Sources */,
+				03956D122C708F8E00DE8AC0 /* Date.swift in Sources */,
 				033FD5AD2C68FCBB00705C97 /* ImageUtils.swift in Sources */,
 				033FD5952C68CC9400705C97 /* ApiRequest.swift in Sources */,
 				033FD5A42C68EF4800705C97 /* Bundle.swift in Sources */,
@@ -377,6 +384,7 @@
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
 				03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */,
 				03587A1A2C6DF95F0060D409 /* JWTProtocol.swift in Sources */,
+				03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */,
 				033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */,
 				033FD5A62C68F02F00705C97 /* UIDevice.swift in Sources */,
 				033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */,

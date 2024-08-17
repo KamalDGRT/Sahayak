@@ -3,7 +3,7 @@
 //  Sahayak
 //
 
-import Foundation
+import UIKit
 
 public extension String {
     //To check text field or String is blank or not
@@ -57,5 +57,18 @@ public extension String {
         } else {
             return ""
         }
+    }
+}
+
+public extension String {
+    var imageIsPresent: Bool {
+        if let _ = UIImage(named: self) {
+            return true
+        }
+        return false
+    }
+    
+    var imageIsAbsent: Bool {
+        !imageIsPresent
     }
 }
