@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032EDDE32C73C0360030911E /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032EDDE22C73C0360030911E /* TypeAliases.swift */; };
+		032EDDE52C73C14E0030911E /* StringDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032EDDE42C73C14E0030911E /* StringDictionary.swift */; };
 		0331030E2C6A7F48009BB7EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0331030D2C6A7F48009BB7EC /* README.md */; };
 		033FD5612C67C96700705C97 /* Sahayak.docc in Sources */ = {isa = PBXBuildFile; fileRef = 033FD5602C67C96700705C97 /* Sahayak.docc */; };
 		033FD5672C67C96800705C97 /* Sahayak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033FD55C2C67C96700705C97 /* Sahayak.framework */; };
@@ -40,6 +42,7 @@
 		03587A1E2C6DFA070060D409 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */; };
 		03956D122C708F8E00DE8AC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D112C708F8E00DE8AC0 /* Date.swift */; };
 		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
+		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
 		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032EDDE22C73C0360030911E /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		032EDDE42C73C14E0030911E /* StringDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDictionary.swift; sourceTree = "<group>"; };
 		0331030D2C6A7F48009BB7EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		033FD55C2C67C96700705C97 /* Sahayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sahayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		033FD55F2C67C96700705C97 /* Sahayak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sahayak.h; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
 		03956D112C708F8E00DE8AC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		03956D172C70D57100DE8AC0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		03956D1D2C70E9B100DE8AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +193,8 @@
 				033FD5A32C68EF4800705C97 /* Bundle.swift */,
 				033FD5A52C68F02F00705C97 /* UIDevice.swift */,
 				03956D112C708F8E00DE8AC0 /* Date.swift */,
+				03956D1D2C70E9B100DE8AC0 /* Task.swift */,
+				032EDDE42C73C14E0030911E /* StringDictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			children = (
 				033FD5802C68BEFC00705C97 /* Logger.swift */,
 				033FD58E2C68CBFC00705C97 /* JSON.swift */,
+				032EDDE22C73C0360030911E /* TypeAliases.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -384,10 +393,13 @@
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
 				03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */,
 				03587A1A2C6DF95F0060D409 /* JWTProtocol.swift in Sources */,
+				03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */,
 				03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */,
 				033FD5992C68D0DC00705C97 /* HTTPStatusCodes.swift in Sources */,
+				032EDDE32C73C0360030911E /* TypeAliases.swift in Sources */,
 				033FD5A62C68F02F00705C97 /* UIDevice.swift in Sources */,
 				033FD58A2C68C2C300705C97 /* TextFieldInput.swift in Sources */,
+				032EDDE52C73C14E0030911E /* StringDictionary.swift in Sources */,
 				033FD57E2C68BE2F00705C97 /* Navigator.swift in Sources */,
 				033FD57C2C68BDA300705C97 /* Binding.swift in Sources */,
 				033FD5612C67C96700705C97 /* Sahayak.docc in Sources */,

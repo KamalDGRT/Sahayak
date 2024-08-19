@@ -72,3 +72,13 @@ public extension String {
         !imageIsPresent
     }
 }
+
+public extension String {
+    func lwr() -> String {
+        self.lowercased()
+    }
+    
+    func upr() -> String {
+        self.uppercased()
+    }
+}

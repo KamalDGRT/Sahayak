@@ -58,24 +58,14 @@ public extension Dictionary {
     }
 }
 
-public extension Dictionary where Key == String, Value == String {
-    var urlEncodedString: String {
-        var urlComponents = URLComponents(string: "")
-        urlComponents?.queryItems = self.map {
-            URLQueryItem(name: $0, value: $1)
-        }
-        return urlComponents?.query ?? ""
-    }
-}
-
 public extension Encodable {
     /// https://stackoverflow.com/a/46597941
     subscript(key: String) -> Any? {
         return dictionary[key]
     }
     
-    var dictionary: [String: Any] {
-        return (try? JSONSerialization.jsonObject(with: Json.encoder.encode(self))) as? [String: Any] ?? [:]
+    var dictionary: JsonDictionary {
+        return (try? JSONSerialization.jsonObject(with: Json.encoder.encode(self))) as? JsonDictionary ?? [:]
     }
     
     var toJsonString: String {

@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-/// A view mimicing the material text view provided by Google with various customizations
+/// A view mimicking the material text view provided by Google with various customisations
 public struct MaterialTextField: View {
     
     @Binding private var content: String

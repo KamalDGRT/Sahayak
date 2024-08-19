@@ -12,29 +12,29 @@ public struct ApiRequest {
     /// The url of the API server. Example: `https://yourapp.com`
     var baseUrl = ""
     
-    /// The endpoint resource of this API request e.g. `scheme://host<RESOURCE>` where <RESOURCE> could be `/info`, etc. NOTE: The preceeding forward slash is required.
+    /// The endpoint resource of this API request e.g. `scheme://host<RESOURCE>` where <RESOURCE> could be `/info`, etc. NOTE: The preceding forward slash is required.
     var endPoint = ""
     
     /// Optional headers to include in your request.
-    var requestHeaders: [String: String]? = nil
+    var requestHeaders: StringDictionary? = nil
     
     /// The request body that will be sent. Mostly used for POST/PUT/PATCH calls
-    var requestBody: [String: Any]? = nil
+    var requestBody: JsonDictionary? = nil
     
     /// The URL query parameters of this request, if any.
-    var urlQueryParameters: [String: String]? = nil
+    var urlQueryParameters: StringDictionary? = nil
     
     /// The form data for request type where the content is of type `application/x-www-form-urlencoded`
-    var formData: [String: String]? = nil
+    var formData: StringDictionary? = nil
     
     public init(
         method: HTTPMethod,
         baseUrl: String = "",
         endPoint: String = "",
-        requestHeaders: [String : String]? = nil,
-        requestBody: [String : Any]? = nil,
-        urlQueryParameters: [String : String]? = nil,
-        formData: [String : String]? = nil
+        requestHeaders: StringDictionary? = nil,
+        requestBody: JsonDictionary? = nil,
+        urlQueryParameters: StringDictionary? = nil,
+        formData: StringDictionary? = nil
     ) {
         self.method = method
         self.baseUrl = baseUrl
@@ -56,5 +56,26 @@ public struct ApiRequest {
         str += "formData: " + (formData?.toJsonString ?? "") + "\n"
         str += "}\n"
         return str
+    }
+    
+    public func url() -> URL? {
+        var urlComponents = URLComponents(string: baseUrl)
+        urlComponents?.path = endPoint
+        
+        /// adding query params
+        if let queryParams = urlQueryParameters {
+            urlComponents?.queryItems = queryParams.map {
+                URLQueryItem(name: $0, value: $1)
+            }
+        }
+        
+        return urlComponents?.url
+    }
+    
+    public func httpBody() -> Data? {
+        let isFormUrlEncoded = requestHeaders?.isFormUrlEncoded() ?? false
+        let formUrlData = formData?.urlEncodedString.data(using: .utf8)
+        let requestBodyData = requestBody?.jsonData
+        return isFormUrlEncoded ? formUrlData : requestBodyData
     }
 }

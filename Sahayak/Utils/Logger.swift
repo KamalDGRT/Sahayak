@@ -63,14 +63,13 @@ public class Log {
 }
 
 public extension Log {
-    // MARK: - Loging methods
-    
+    // MARK: - Logging methods
     
     /// Logs error messages on console with prefix [‼️]
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func e( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {

@@ -5,9 +5,6 @@
 
 import UIKit
 
-public typealias ApiSuccessResponse<T: Codable> = (T, HTTPStatusCode) -> Void
-public typealias ApiErrorResponse = (ApiError, HTTPStatusCode) -> Void
-
 /// Global Function to print the description provided by the `APIError` along with the status code.
 public func apiErrorDescription(_ error: ApiError, _ statusCode: HTTPStatusCode) -> String {
     var str = "\n" + "-".repeatString(10) + "\n"
@@ -19,13 +16,13 @@ public func apiErrorDescription(_ error: ApiError, _ statusCode: HTTPStatusCode)
 
 public struct NetworkService {
     
-    public static let shared = NetworkService()
+    public static var shared = NetworkService()
     
-    // Singleton that Only allows one instance of this class
+    // Singleton that Only allows one instance of this struct
     private init() {}
     
-    /// Default headers to include in your request. You can set this preferrably in the `AppDelegate`.
-    public var defaultHeaders: [String: String]? = nil
+    /// Default headers to include in your request. You can set this preferably in the `AppDelegate`.
+    public var defaultHeaders: StringDictionary? = nil
     
     /// With this, you can set your own configuration for the Network Calls in your `AppDelegate`.
     public var urlSessionConfig: URLSessionConfiguration?
@@ -48,85 +45,12 @@ public struct NetworkService {
         apiFailure: @escaping(ApiErrorResponse)
     ) {
         
-        guard apiRequest.baseUrl.isNotBlank else {
-            apiFailure(.emptyBaseUrl, .badRequest)
-            return
-        }
-        
-        var urlComponents = URLComponents(string: apiRequest.baseUrl)
-        urlComponents?.path = apiRequest.endPoint
-        
-        /// adding query params
-        if let queryParams = apiRequest.urlQueryParameters {
-            urlComponents?.queryItems = queryParams.map {
-                URLQueryItem(name: $0, value: $1)
-            }
-        }
-        
-        guard let endpointUrl = urlComponents?.url else {
-            apiFailure(.malformedUrl, .badRequest)
-            return
-        }
-        
-        var requestHeaders = [String: String]()
-        /// Default Request Headers
-        if let defaultRequestHeaders = defaultHeaders {
-            for reqHead in defaultRequestHeaders {
-                requestHeaders[reqHead.key] = reqHead.value
-            }
-        }
-        /// Request Headers that are sent in the specific API endpoint call which can be used to override the default headers.
-        if let reqHeaders = apiRequest.requestHeaders {
-            for reqHead in reqHeaders {
-                requestHeaders[reqHead.key] = reqHead.value
-            }
-        }
-        
-        /// creating the actual Swift-Style API Request
-        // Construct our web request.
-        var webRequest = URLRequest(url: endpointUrl)
-        webRequest.httpMethod = apiRequest.method.rawValue
-        
-        if let requestBody = apiRequest.requestBody?.jsonData {
-            webRequest.httpBody = requestBody
-        }
-        
-        /// maybe the content-type can be checked in the headers list and then it can be unwrapped.
-        //    if requestHeaders["Content-Type"].
-        if let formData = apiRequest.formData {
-            webRequest.httpBody = formData.urlEncodedString.data(using: .utf8)
-        }
-        
-        webRequest.cachePolicy = .useProtocolCachePolicy
-        webRequest.timeoutInterval = 120
-        webRequest.allHTTPHeaderFields = requestHeaders
+        guard let webRequest = prepareUrlRequest(apiRequest, apiFailure) else { return }
         
         let dataTask = urlSession.dataTask(with: webRequest) { (data, response, error) in
             DispatchQueue.main.async {
-                guard let apiResponse = response as? HTTPURLResponse,
-                      let httpStatusCode = HTTPStatusCode(rawValue: apiResponse.statusCode) else {
-                    apiFailure(.invalidResponse, .badRequest)
-                    return
-                }
-                
-                /// Api call succeeded
-                if apiResponse.statusCode >= 200 &&
-                    apiResponse.statusCode < 399 &&
-                    error == nil {
-                    /// Handling error  while parsing the data
-                    guard let reponseData: T = data?.jsonDecoder() else {
-                        apiFailure(.decoding, .badRequest)
-                        return
-                    }
-                    apiSuccess(reponseData, httpStatusCode)
-                } else if let jsonData = data {
-                    apiFailure(.serverErrorWithData(data: jsonData), httpStatusCode)
-                    return
-                } else {
-                    /// no data and failure implies internal server error
-                    apiFailure(.internalServerError, httpStatusCode)
-                }
-            } // Dispatch Queue
+                processUrlResponse(data, response, error, apiSuccess, apiFailure)
+            }
         } // urlSession
         dataTask.resume()
     } // request
@@ -153,5 +77,80 @@ public struct NetworkService {
         }
         
         return image
+    }
+}
+
+private extension NetworkService {
+    func getRequestHeaders(_ apiRequestHeaders: StringDictionary?) -> StringDictionary {
+        var requestHeaders = StringDictionary()
+        /// Default Request Headers
+        if let defaultRequestHeaders = defaultHeaders {
+            for reqHead in defaultRequestHeaders {
+                requestHeaders[reqHead.key] = reqHead.value
+            }
+        }
+        /// Request Headers that are sent in the specific API endpoint call which can be used to override the default headers.
+        if let reqHeaders = apiRequestHeaders {
+            for reqHead in reqHeaders {
+                requestHeaders[reqHead.key] = reqHead.value
+            }
+        }
+        
+        return requestHeaders
+    }
+    
+    func prepareUrlRequest(_ apiRequest: ApiRequest, _ apiFailure: @escaping(ApiErrorResponse)) -> URLRequest? {
+        /// creating the actual Swift-Style API Request
+        // Construct our web request.
+        guard apiRequest.baseUrl.isNotBlank else {
+            apiFailure(.emptyBaseUrl, .badRequest)
+            return nil
+        }
+        
+        guard let endpointUrl = apiRequest.url() else {
+            apiFailure(.malformedUrl, .badRequest)
+            return nil
+        }
+        
+        var webRequest = URLRequest(url: endpointUrl)
+        webRequest.httpMethod = apiRequest.method.rawValue
+        webRequest.httpBody = apiRequest.httpBody()
+        webRequest.cachePolicy = .useProtocolCachePolicy
+        webRequest.timeoutInterval = 120
+        webRequest.allHTTPHeaderFields = getRequestHeaders(apiRequest.requestHeaders)
+        return webRequest
+    }
+    
+    func processUrlResponse<T: Codable>(
+        _ data: Data?,
+        _ response: URLResponse?,
+        _ error: (any Error)?,
+        _ apiSuccess: @escaping(ApiSuccessResponse<T>),
+        _ apiFailure: @escaping(ApiErrorResponse)
+    ) {
+        guard let apiResponse = response as? HTTPURLResponse,
+              let httpStatusCode = HTTPStatusCode(rawValue: apiResponse.statusCode) else {
+            apiFailure(.invalidResponse, .badRequest)
+            return
+        }
+        
+        /// Api call succeeded
+        if apiResponse.statusCode >= 200 &&
+            apiResponse.statusCode < 399 &&
+            error == nil {
+            /// Handling error  while parsing the data
+            guard let responseData: T = data?.jsonDecoder() else {
+                apiFailure(.decoding, .badRequest)
+                return
+            }
+            apiSuccess(responseData, httpStatusCode)
+        } else if let jsonData = data {
+            apiFailure(.serverErrorWithData(data: jsonData), httpStatusCode)
+            return
+        } else {
+            /// no data and failure implies internal server error
+            apiFailure(.internalServerError, httpStatusCode)
+            return
+        }
     }
 }

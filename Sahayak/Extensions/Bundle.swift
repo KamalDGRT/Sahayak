@@ -8,7 +8,7 @@ import Foundation
 public extension Bundle {
     /// Returns json content present in a file to its corresponding JSON codable struct.
     /// - Parameter file: Name of the JSON file
-    /// - Returns: the decoded file content to corrresponding Codable struct
+    /// - Returns: the decoded file content to corresponding Codable struct
     func decode<T: Codable>(_ file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle")
