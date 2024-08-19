@@ -15,6 +15,6 @@ extension StringDictionary {
     }
     
     func isFormUrlEncoded() -> Bool {
-        return self["Content-Type".lwr()]?.lwr() == "application/x-www-form-urlencoded"
+        return self["Content-Type"]?.lwr() == "application/x-www-form-urlencoded"
     }
 }
