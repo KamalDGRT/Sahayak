@@ -1,5 +1,5 @@
 //
-//  MaterialTextFieldUtils.swift
+//  SahayakTextFieldUtils.swift
 //  Sahayak
 //  Reference github.com/norrisboat/MaterialTextFieldSwiftUI
 //
@@ -7,7 +7,7 @@
 import SwiftUI
 import Combine
 
-public enum MaterialTextFieldStyle {
+public enum SahayakTextFieldStyle {
     case normal
     case floating
     case outline
@@ -54,7 +54,7 @@ public struct ErrorLabel {
     }
 }
 
-public struct MaterialFont {
+public struct SahayakFont {
     var fontName: String
     var fontSize: CGFloat
     var fontColor: Color
@@ -73,7 +73,7 @@ public struct MaterialFont {
     }
 }
 
-public struct MaterialBorderColor {
+public struct SahayakBorderColor {
     var normal = Color.gray
     var disabled = Color.gray.opacity(0.5)
     var focused = Color.blue
@@ -81,7 +81,7 @@ public struct MaterialBorderColor {
     var failure = Color.red
 }
 
-class MaterialTextFieldNotifier: ObservableObject {
+class SahayakTextFieldNotifier: ObservableObject {
     
     @Published var leftView: AnyView?
     @Published var rightView: AnyView?
@@ -96,11 +96,11 @@ class MaterialTextFieldNotifier: ObservableObject {
     @Published var showCharacterCounter: Bool = false
     @Published var helperText: String = ""
     @Published var errorText = ErrorLabel("", false, false)
-    @Published var borderColor = MaterialBorderColor()
-    @Published var placeholderFont = MaterialFont("", 16.0, .black, .white)
-    @Published var textFont = MaterialFont("", 16.0, .black, .white)
-    @Published var errorTextFont = MaterialFont("", 16.0, .black, .white)
-    @Published var helperTextFont = MaterialFont("", 16.0, .black, .white)
+    @Published var borderColor = SahayakBorderColor()
+    @Published var placeholderFont = SahayakFont("", 16.0, .black, .white)
+    @Published var textFont = SahayakFont("", 16.0, .black, .white)
+    @Published var errorTextFont = SahayakFont("", 16.0, .black, .white)
+    @Published var helperTextFont = SahayakFont("", 16.0, .black, .white)
     
     @Published var onSubmit: () -> Void = {}
 }

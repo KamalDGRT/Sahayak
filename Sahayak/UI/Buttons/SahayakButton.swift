@@ -1,12 +1,12 @@
 //
-//  MaterialButton.swift
+//  SahayakButton.swift
 //  Sahayak
 //
 
 import SwiftUI
 
-class MaterialButtonNotifier: ObservableObject {
-    var titleFont = MaterialFont("", 16.0, .black, .white)
+class SahayakButtonNotifier: ObservableObject {
+    var titleFont = SahayakFont("", 16.0, .black, .white)
     var backgroundColor: Color = .gray
     var height = 45.0
     var cornerRadius = 10.0
@@ -14,11 +14,11 @@ class MaterialButtonNotifier: ObservableObject {
     var accessibilityIdentifier = ""
 }
 
-public struct MaterialButton: View {
+public struct SahayakButton: View {
     var title: String
     var ctaAction: (() -> Void)
     
-    @ObservedObject private var notifier = MaterialButtonNotifier()
+    @ObservedObject private var notifier = SahayakButtonNotifier()
     
     public init(_ title: String, ctaAction: @escaping () -> Void) {
         self.title = title
@@ -46,8 +46,8 @@ public struct MaterialButton: View {
 }
 
 // MARK: View Creators
-public extension MaterialButton {
-    func titleFont(_ font: MaterialFont) -> Self {
+public extension SahayakButton {
+    func titleFont(_ font: SahayakFont) -> Self {
         self.notifier.titleFont = font
         return self
     }
@@ -79,10 +79,10 @@ public extension MaterialButton {
 }
 
 #Preview {
-    MaterialButton("Click Me!") {}
+    SahayakButton("Click Me!") {}
         .backgroundColor(.yellow)
         .cornerRadius(10)
         .height(50)
-        .accessibilityIdentifier("Material.Example.Button")
+        .accessibilityIdentifier("Sahayak.Example.Button")
         .padding(20)
 }

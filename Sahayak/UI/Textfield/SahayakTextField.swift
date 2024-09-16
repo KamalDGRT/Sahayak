@@ -1,5 +1,5 @@
 //
-//  MaterialTextField.swift
+//  SahayakTextField.swift
 //  Sahayak
 //  Reference github.com/norrisboat/MaterialTextFieldSwiftUI
 //
@@ -7,17 +7,17 @@
 import SwiftUI
 
 /// A view mimicking the material text view provided by Google with various customisations
-public struct MaterialTextField: View {
+public struct SahayakTextField: View {
     
     @Binding private var content: String
     @Binding private var isFocused: Bool
     @State private var isFilled: Bool = false
     @Binding private var placeHolder: PlaceHolder
-    @ObservedObject private var notifier = MaterialTextFieldNotifier()
+    @ObservedObject private var notifier = SahayakTextFieldNotifier()
     
-    var style: MaterialTextFieldStyle
+    var style: SahayakTextFieldStyle
     
-    /// Show a Material Text Field with default parameters
+    /// Show a Sahayak Text Field with default parameters
     /// - Parameters:
     ///   - content: Text content
     ///   - placeHolder: Hint to give the user an idea of what to input
@@ -27,7 +27,7 @@ public struct MaterialTextField: View {
         _ content: Binding<String>,
         placeHolder: Binding<PlaceHolder>,
         isFocused: Binding<Bool>,
-        style: MaterialTextFieldStyle = .outline
+        style: SahayakTextFieldStyle = .outline
     ) {
         self._content = content
         self._isFocused = isFocused
@@ -77,7 +77,7 @@ public struct MaterialTextField: View {
 }
 
 // MARK: Private Extensions
-private extension MaterialTextField {
+private extension SahayakTextField {
     //MARK: Content View
     @ViewBuilder
     func contentView() -> some View {
@@ -265,10 +265,10 @@ private extension MaterialTextField {
 }
 
 //MARK: Public Extensions
-public extension MaterialTextField {
+public extension SahayakTextField {
     /// Sets the color to show when the text field is active and the cursor color
     /// - Parameter color: Accent color
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func accentColor(_ color: Color) -> Self {
         notifier.accentColor = color
         return self
@@ -276,7 +276,7 @@ public extension MaterialTextField {
     
     /// Sets the condition to show the error view
     /// - Parameter show: Boolean state to enable or disable showing an error
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func showError(_ show: Bool) -> Self {
         notifier.errorText.isVisible = show
         return self
@@ -284,23 +284,23 @@ public extension MaterialTextField {
     
     /// Sets the helper text
     /// - Parameter text: The helper text
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func helperText(_ text: String) -> Self {
         notifier.helperText = text
         return self
     }
     
-    /// Sets if the MaterialTextField is secure
+    /// Sets if the SahayakTextField is secure
     /// - Parameter isSecure: Boolean state to enable or disable secure text input
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func isSecure(_ isSecure: Bool) -> Self {
         notifier.isSecure = isSecure
         return self
     }
     
-    /// Sets if the MaterialTextField is disabled
-    /// - Parameter isDisabled: Boolean state to enable or disable MaterialTextField
-    /// - Returns: MaterialTextField
+    /// Sets if the SahayakTextField is disabled
+    /// - Parameter isDisabled: Boolean state to enable or disable SahayakTextField
+    /// - Returns: SahayakTextField
     func isDisabled(_ isDisabled: Bool) -> Self {
         notifier.isDisabled = isDisabled
         return self
@@ -309,7 +309,7 @@ public extension MaterialTextField {
     
     /// Sets the maximum character count to be accepted
     /// - Parameter max: The maximum character count
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func maxCharacterCount(_ max: Int) -> Self {
         notifier.maxCharacters = max
         return self
@@ -317,23 +317,23 @@ public extension MaterialTextField {
     
     /// Sets if the character counter view should show or not
     /// - Parameter show: Boolean state to show character count or not
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func showCharacterCounter(_ show: Bool) -> Self {
         notifier.showCharacterCounter = show
         return self
     }
     
     /// Sets the left view
-    /// - Parameter view:  A view that will be shown on the leading side of the MaterialTextField
-    /// - Returns: MaterialTextField
+    /// - Parameter view:  A view that will be shown on the leading side of the SahayakTextField
+    /// - Returns: SahayakTextField
     func leftView<LeftView: View>(@ViewBuilder _ view: @escaping () -> LeftView) -> Self {
         notifier.leftView = AnyView(view())
         return self
     }
     
     /// Sets the right view
-    /// - Parameter view:  A view that will be shown on the trailing side of the MaterialTextField
-    /// - Returns: MaterialTextField
+    /// - Parameter view:  A view that will be shown on the trailing side of the SahayakTextField
+    /// - Returns: SahayakTextField
     func rightView<RightView: View>(@ViewBuilder _ view: @escaping () -> RightView) -> Self {
         notifier.rightView = AnyView(view())
         return self
@@ -374,7 +374,7 @@ public extension MaterialTextField {
     
     /// Content type of the input. It helps determine which keyboard type to show
     /// - Parameter type: type of the keyboard
-    /// - Returns: MaterialTextField
+    /// - Returns: SahayakTextField
     func keyboardType(_ type: UIKeyboardType) -> Self {
         notifier.keyboardType = type
         return self
