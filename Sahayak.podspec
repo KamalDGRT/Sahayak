@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name           = "Sahayak"
-  spec.version        = "0.0.1"
+  spec.version        = "1.0.0"
   spec.summary        = "My Helper in iOS App Development."
   spec.description    = "Comarade in developing iOS applications."
   spec.homepage       = "https://github.com/KamalDGRT/Sahayak"
