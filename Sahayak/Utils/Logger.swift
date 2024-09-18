@@ -6,7 +6,7 @@
 
 import Foundation
 
-/// Enum which maps an appropiate symbol which added as prefix for each log message
+/// Enum which maps an appropriate symbol which added as prefix for each log message
 ///
 /// - error: Log type error
 /// - info: Log type info
@@ -82,7 +82,7 @@ public extension Log {
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func i ( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
@@ -95,7 +95,7 @@ public extension Log {
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func d( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
@@ -108,7 +108,7 @@ public extension Log {
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func v( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
@@ -121,7 +121,7 @@ public extension Log {
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func w( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
@@ -134,7 +134,7 @@ public extension Log {
     ///
     /// - Parameters:
     ///   - object: Object or message to be logged
-    ///   - filename: File name from where loggin to be done
+    ///   - filename: File name from where logging to be done
     ///   - line: Line number in file from where the logging is done
     ///   - funcName: Name of the function from where the logging is done
     class func s( _ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {

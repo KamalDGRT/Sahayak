@@ -37,6 +37,7 @@ public class HostingController<ContentView>: UIHostingController<ContentView> wh
         self.rootView.loadView()
     }
     
+    /// A way to call UIKit's `viewWillAppear` in SwiftUI
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.rootView.viewOnAppear(viewController: self)

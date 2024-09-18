@@ -19,10 +19,10 @@ public enum ApiError: Error {
     /// A request url was malformed
     case malformedUrl
     
-    ///  Error occured while trying to parse the API response.
+    ///  Error occurred while trying to parse the API response.
     case invalidResponse
     
-    ///  Typical Interal Server error.
+    ///  Typical Internal Server error.
     case internalServerError
     
     /// API is able to give some response data upon failure.

@@ -102,5 +102,5 @@ class SahayakTextFieldNotifier: ObservableObject {
     @Published var errorTextFont = SahayakFont("", 16.0, .black, .white)
     @Published var helperTextFont = SahayakFont("", 16.0, .black, .white)
     
-    @Published var onSubmit: () -> Void = {}
+    @Published var onSubmit: EmptyClosure = {}
 }

@@ -20,7 +20,7 @@ public struct CheckBoxView: View {
     let fillColor: Color
     let borderColor: Color
     let accessibilityIdentifier: String?
-    let onSelect: (() -> Void)
+    let onSelect: EmptyClosure
     
     public init(
         isSelected: Binding<Bool>,
@@ -32,7 +32,7 @@ public struct CheckBoxView: View {
         fillColor: Color = .white,
         borderColor: Color = .black,
         accessibilityIdentifier: String? = nil,
-        onSelect: @escaping () -> Void
+        onSelect: @escaping EmptyClosure
     ) {
         self.isSelected = isSelected
         self.imageType = imageType

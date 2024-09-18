@@ -340,7 +340,7 @@ public extension SahayakTextField {
     }
     
     
-    func onSubmit(_ onSubmit: @escaping () -> Void) {
+    func onSubmit(_ onSubmit: @escaping EmptyClosure) {
         notifier.onSubmit = onSubmit
     }
     

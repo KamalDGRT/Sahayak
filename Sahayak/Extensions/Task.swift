@@ -6,7 +6,7 @@
 import Foundation
 
 /// Reference: `https://stackoverflow.com/a/77300959`
-extension Task where Failure == Error {
+public extension Task where Failure == Error {
     /// Performs an async task in a sync context.
     ///
     /// - Note: This function blocks the thread until the given operation is finished. The caller is responsible for managing multithreading.

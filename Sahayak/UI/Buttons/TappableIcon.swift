@@ -11,7 +11,7 @@ public struct TappableIcon: View {
     var iconHeight: CGFloat
     var isTappable: Bool
     var accessibilityIdentifier: String?
-    var clickAction: (() -> Void)? /// use closure for callback
+    var clickAction: EmptyClosure? /// use closure for callback
     
     public var body: some View {
         Button(action: {
@@ -31,7 +31,7 @@ public struct TappableIcon: View {
         _ iconHeight: CGFloat,_
         isTappable: Bool = true,
         accessibilityIdentifier: String? = nil,
-        clickAction: (() -> Void)? = nil
+        clickAction: EmptyClosure? = nil
     ) {
         self.iconName = iconName
         self.iconWidth = iconWidth

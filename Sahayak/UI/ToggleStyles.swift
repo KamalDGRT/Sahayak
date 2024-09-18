@@ -14,6 +14,7 @@ public struct CheckmarkToggleStyle: ToggleStyle {
         self.offColor = offColor
     }
     
+    /// Body of the CheckmarkToggle view
     public func makeBody(configuration: Configuration) -> some View {
         Button(action: {
             configuration.isOn.toggle()
@@ -53,6 +54,7 @@ public struct CustomToggleStyle: ToggleStyle {
         self.offColor = offColor
     }
     
+    /// Body of the CustomToggle view
     public func makeBody(configuration: Configuration) -> some View {
         Button {
             configuration.isOn.toggle()

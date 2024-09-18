@@ -5,7 +5,7 @@
 
 import Foundation
 
-extension StringDictionary {
+public extension StringDictionary {
     var urlEncodedString: String {
         var urlComponents = URLComponents(string: "")
         urlComponents?.queryItems = self.map {

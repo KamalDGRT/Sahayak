@@ -16,11 +16,11 @@ class SahayakButtonNotifier: ObservableObject {
 
 public struct SahayakButton: View {
     var title: String
-    var ctaAction: (() -> Void)
+    var ctaAction: EmptyClosure
     
     @ObservedObject private var notifier = SahayakButtonNotifier()
     
-    public init(_ title: String, ctaAction: @escaping () -> Void) {
+    public init(_ title: String, ctaAction: @escaping EmptyClosure) {
         self.title = title
         self.ctaAction = ctaAction
     }
