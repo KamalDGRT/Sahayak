@@ -7,30 +7,30 @@ import Foundation
 
 public struct ApiRequest {
     /// The HTTP request method to use for this request.
-    var method: HTTPMethod = .get
+    var method: HTTPMethod
     
     /// The url of the API server. Example: `https://yourapp.com`
-    var baseUrl = ""
+    var baseUrl: String
     
     /// The endpoint resource of this API request e.g. `scheme://host<RESOURCE>` where <RESOURCE> could be `/info`, etc. NOTE: The preceding forward slash is required.
-    var endPoint = ""
+    var endPoint: String
     
     /// Optional headers to include in your request.
-    var requestHeaders: StringDictionary? = nil
+    var requestHeaders: StringDictionary?
     
     /// The request body that will be sent. Mostly used for POST/PUT/PATCH calls
-    var requestBody: JsonDictionary? = nil
+    var requestBody: JsonDictionary?
     
     /// The URL query parameters of this request, if any.
-    var urlQueryParameters: StringDictionary? = nil
+    var urlQueryParameters: StringDictionary?
     
     /// The form data for request type where the content is of type `application/x-www-form-urlencoded`
     var formData: StringDictionary? = nil
     
     public init(
         method: HTTPMethod,
-        baseUrl: String = "",
-        endPoint: String = "",
+        baseUrl: String,
+        endPoint: String,
         requestHeaders: StringDictionary? = nil,
         requestBody: JsonDictionary? = nil,
         urlQueryParameters: StringDictionary? = nil,
