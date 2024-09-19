@@ -15,17 +15,20 @@ public func apiErrorDescription(_ error: ApiError, _ statusCode: HTTPStatusCode)
 }
 
 public struct NetworkService {
-    
-    public static var shared = NetworkService()
-    
-    // Singleton that Only allows one instance of this struct
-    private init() {}
-    
     /// Default headers to include in your request. You can set this preferably in the `AppDelegate`.
-    public var defaultHeaders: StringDictionary? = nil
+    public var defaultHeaders: StringDictionary?
     
     /// With this, you can set your own configuration for the Network Calls in your `AppDelegate`.
     public var urlSessionConfig: URLSessionConfiguration?
+    
+    // This initialiser would be used when you want to connect to different
+    init(
+        defaultHeaders: StringDictionary? = nil,
+        urlSessionConfig: URLSessionConfiguration = .default
+    ) {
+        self.defaultHeaders = defaultHeaders
+        self.urlSessionConfig = urlSessionConfig
+    }
     
     private var urlSession: URLSession {
         if let urlSessionConfig {
@@ -44,7 +47,6 @@ public struct NetworkService {
         apiSuccess: @escaping(ApiSuccessResponse<T>),
         apiFailure: @escaping(ApiErrorResponse)
     ) {
-        
         guard let webRequest = prepareUrlRequest(apiRequest, apiFailure) else { return }
         
         let dataTask = urlSession.dataTask(with: webRequest) { (data, response, error) in
@@ -66,7 +68,7 @@ public struct NetworkService {
             throw URLError(.badURL)
         }
         
-        let data = try? await URLSession.shared.data(from: url)
+        let data = try? await urlSession.data(from: url)
         
         guard let data else {
             throw URLError(.cannotDecodeRawData)
@@ -86,13 +88,13 @@ private extension NetworkService {
         /// Default Request Headers
         if let defaultRequestHeaders = defaultHeaders {
             for reqHead in defaultRequestHeaders {
-                requestHeaders[reqHead.key] = reqHead.value
+                requestHeaders[reqHead.key.lwr()] = reqHead.value
             }
         }
         /// Request Headers that are sent in the specific API endpoint call which can be used to override the default headers.
         if let reqHeaders = apiRequestHeaders {
             for reqHead in reqHeaders {
-                requestHeaders[reqHead.key] = reqHead.value
+                requestHeaders[reqHead.key.lwr()] = reqHead.value
             }
         }
         

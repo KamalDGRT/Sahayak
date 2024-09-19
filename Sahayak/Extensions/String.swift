@@ -74,10 +74,14 @@ public extension String {
 }
 
 public extension String {
+    /// This is a wrapper around the built-in `.lowercased()` function.
+    /// - Returns: lower-cased version of the current string
     func lwr() -> String {
         self.lowercased()
     }
     
+    /// This is a wrapper around the built-in `.uppercased()` function.
+    /// - Returns: upper-cased version of the current string
     func upr() -> String {
         self.uppercased()
     }

@@ -44,6 +44,7 @@
 		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
 		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
 		03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 03A2A4E52C9CAACC0066378B /* Sahayak.podspec */; };
+		03A2A4E82C9CBD820066378B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2A4E72C9CBD7E0066378B /* ApiClient.swift */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
 		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		03956D172C70D57100DE8AC0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		03956D1D2C70E9B100DE8AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		03A2A4E52C9CAACC0066378B /* Sahayak.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sahayak.podspec; sourceTree = "<group>"; };
+		03A2A4E72C9CBD7E0066378B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 		033FD5772C67C9B300705C97 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				03A2A4E72C9CBD7E0066378B /* ApiClient.swift */,
 				033FD5902C68CC9400705C97 /* ApiError.swift */,
 				033FD5912C68CC9400705C97 /* ApiRequest.swift */,
 				033FD5922C68CC9400705C97 /* HTTPMethods.swift */,
@@ -387,6 +390,7 @@
 				033FD5842C68C10F00705C97 /* SahayakTextField.swift in Sources */,
 				033FD5AF2C68FE3500705C97 /* PixieCacheKit.swift in Sources */,
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
+				03A2A4E82C9CBD820066378B /* ApiClient.swift in Sources */,
 				03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */,
 				033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */,
 				033FD59D2C68E2C300705C97 /* SahayakButton.swift in Sources */,
