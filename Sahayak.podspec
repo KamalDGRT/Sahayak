@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name           = "Sahayak"
-  spec.version        = "1.0.1"
+  spec.version        = "1.0.2"
   spec.summary        = "My Helper in iOS App Development."
-  spec.description    = "Comarade in developing iOS applications."
+  spec.description    = "Comrade in developing iOS applications."
   spec.homepage       = "https://github.com/KamalDGRT/Sahayak"
   spec.license        = { :type => "MIT", :file => "LICENSE" }
   spec.author         = { "KamalDGRT" => "kamaldgrt@gmail.com" }

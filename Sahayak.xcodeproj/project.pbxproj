@@ -43,6 +43,7 @@
 		03956D122C708F8E00DE8AC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D112C708F8E00DE8AC0 /* Date.swift */; };
 		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
 		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
+		03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 03A2A4E52C9CAACC0066378B /* Sahayak.podspec */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
 		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		03956D112C708F8E00DE8AC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		03956D172C70D57100DE8AC0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		03956D1D2C70E9B100DE8AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		03A2A4E52C9CAACC0066378B /* Sahayak.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sahayak.podspec; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 		033FD5522C67C96700705C97 = {
 			isa = PBXGroup;
 			children = (
+				03A2A4E52C9CAACC0066378B /* Sahayak.podspec */,
 				0331030D2C6A7F48009BB7EC /* README.md */,
 				033FD55E2C67C96700705C97 /* Sahayak */,
 				033FD56A2C67C96800705C97 /* SahayakTests */,
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0331030E2C6A7F48009BB7EC /* README.md in Resources */,
+				03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
