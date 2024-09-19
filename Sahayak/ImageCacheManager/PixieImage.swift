@@ -40,9 +40,20 @@ public struct PixieImage<Placeholder>: View where Placeholder: View {
     /// - Parameters:
     ///   - urlString: The URL string of the image to fetch and display.
     ///   - key: The cache key for the fetched image.
-    public init(_ urlString: String, key: String) where Placeholder == EmptyView  {
-        _viewModel = StateObject(wrappedValue: PixieImageViewModel(url: urlString, key: key))
+    public init(
+        _ urlString: String,
+        key: String,
+        networkService: NetworkService
+    ) where Placeholder == EmptyView {
+        _viewModel = StateObject(
+            wrappedValue: PixieImageViewModel(
+                url: urlString,
+                key: key,
+                networkService: networkService
+            )
+        )
         self.placeholder = nil
+        
     }
     
     /// Initializes `PixieImage` with the image URL, cache key, and an optional placeholder view.
@@ -51,8 +62,19 @@ public struct PixieImage<Placeholder>: View where Placeholder: View {
     ///   - urlString: The URL string of the image to fetch and display.
     ///   - key: The cache key for the fetched image.
     ///   - placeholder: An optional placeholder view while the image is being fetched.
-    public init(_ urlString: String, key: String, @ViewBuilder placeholder: () -> Placeholder?) {
-        _viewModel = StateObject(wrappedValue: PixieImageViewModel(url: urlString, key: key))
+    public init(
+        _ urlString: String,
+        key: String,
+        networkService: NetworkService,
+        @ViewBuilder placeholder: () -> Placeholder?
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: PixieImageViewModel(
+                url: urlString,
+                key: key,
+                networkService: networkService
+            )
+        )
         self.placeholder = placeholder()
     }
     

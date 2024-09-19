@@ -13,6 +13,7 @@ import SwiftUI
     
     private let urlString: String
     private let imageKey: String
+    private let networkService: NetworkService
     
     /// The fetched image, if available.
     @Published var image: UIImage? = nil
@@ -22,9 +23,10 @@ import SwiftUI
     
     // MARK: - Initializer
     
-    init(url: String, key: String) {
+    init(url: String, key: String, networkService: NetworkService) {
         urlString = url
         imageKey = key
+        self.networkService = networkService
         getImage()
     }
     
@@ -71,7 +73,7 @@ import SwiftUI
             withAnimation { isLoading = true }
             
             do {
-                let downloadedImage = try await NetworkService.shared.asyncImageDownload(urlString: urlString)
+                let downloadedImage = try await networkService.asyncImageDownload(urlString: urlString)
                 
                 withAnimation { image = downloadedImage }
                 
