@@ -22,7 +22,7 @@ I stumbled across this project when I was exploring how other developers are cre
 
 - [PixieCacheKit](https://github.com/aumChauhan/PixieCacheKit) - MIT License
 
-I haven't changed much code from here and have used it as such.
+I replaced the `NetworkingUtility` implementation with `NetworkService`. Rest of it is the same.
 
 - [MaterialTextFieldSwiftUI](https://github.com/norrisboat/MaterialTextFieldSwiftUI) - MIT License
 

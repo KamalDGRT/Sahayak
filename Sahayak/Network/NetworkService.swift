@@ -22,7 +22,7 @@ public struct NetworkService {
     public var urlSessionConfig: URLSessionConfiguration?
     
     // This initialiser would be used when you want to connect to different
-    init(
+    public init(
         defaultHeaders: StringDictionary? = nil,
         urlSessionConfig: URLSessionConfiguration = .default
     ) {
