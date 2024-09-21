@@ -34,20 +34,6 @@ enum LogEvent: String {
     }
 }
 
-
-/// Wrapping Swift.print() within DEBUG flag
-///
-/// - Note: *print()* might cause [security vulnerabilities](https://codifiedsecurity.com/mobile-app-security-testing-checklist-ios/)
-///
-/// - Parameter object: The object which is to be logged
-///
-func print(_ object: Any) {
-    // Only allowing in DEBUG mode
-#if DEBUG
-    Swift.print(object)
-#endif
-}
-
 public class Log {
     
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"

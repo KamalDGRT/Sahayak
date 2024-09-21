@@ -40,6 +40,7 @@
 		03587A1A2C6DF95F0060D409 /* JWTProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A192C6DF95F0060D409 /* JWTProtocol.swift */; };
 		03587A1C2C6DF9C80060D409 /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A1B2C6DF9C80060D409 /* JWTDecode.swift */; };
 		03587A1E2C6DFA070060D409 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */; };
+		037915892C9ED4F500EEC938 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037915882C9ED4EF00EEC938 /* AppLogger.swift */; };
 		03956D122C708F8E00DE8AC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D112C708F8E00DE8AC0 /* Date.swift */; };
 		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
 		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
@@ -94,6 +95,7 @@
 		03587A192C6DF95F0060D409 /* JWTProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTProtocol.swift; sourceTree = "<group>"; };
 		03587A1B2C6DF9C80060D409 /* JWTDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
 		03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
+		037915882C9ED4EF00EEC938 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		03956D112C708F8E00DE8AC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		03956D172C70D57100DE8AC0 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		03956D1D2C70E9B100DE8AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		033FD57F2C68BEE900705C97 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				037915882C9ED4EF00EEC938 /* AppLogger.swift */,
 				033FD5802C68BEFC00705C97 /* Logger.swift */,
 				033FD58E2C68CBFC00705C97 /* JSON.swift */,
 				032EDDE22C73C0360030911E /* TypeAliases.swift */,
@@ -391,6 +394,7 @@
 				033FD5AF2C68FE3500705C97 /* PixieCacheKit.swift in Sources */,
 				033FD5812C68BEFC00705C97 /* Logger.swift in Sources */,
 				03A2A4E82C9CBD820066378B /* ApiClient.swift in Sources */,
+				037915892C9ED4F500EEC938 /* AppLogger.swift in Sources */,
 				03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */,
 				033FD5972C68CC9400705C97 /* NetworkService.swift in Sources */,
 				033FD59D2C68E2C300705C97 /* SahayakButton.swift in Sources */,

@@ -32,6 +32,10 @@ I took whatever he could offer and have added my own flavour to it. I added a ne
 
 I modified the stuff that gets printed on the debugger with this one.
 
+- [AppLogger](https://github.com/backslash-f/applogger) - MIT License
+
+I like his implementation. Felt like adding more stuff in the log, so tinkered it a little bit.
+
 - [Navigator](https://github.com/uwaisalqadri/SwiftUIViewUIKitNavigation)
 
 Used this one as such. It was perfect and is still quite underrated as to how simple this is in terms of helping us navigate between SwiftUI views.
