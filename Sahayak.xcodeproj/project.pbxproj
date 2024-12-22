@@ -44,7 +44,6 @@
 		03956D122C708F8E00DE8AC0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D112C708F8E00DE8AC0 /* Date.swift */; };
 		03956D182C70D57100DE8AC0 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D172C70D57100DE8AC0 /* CheckBoxView.swift */; };
 		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
-		03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 03A2A4E52C9CAACC0066378B /* Sahayak.podspec */; };
 		03A2A4E82C9CBD820066378B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2A4E72C9CBD7E0066378B /* ApiClient.swift */; };
 		03C11ECC2D17F272000061AA /* CrossVerticalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C11ECB2D17F272000061AA /* CrossVerticalPresentation.swift */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
@@ -103,6 +102,7 @@
 		03A2A4E52C9CAACC0066378B /* Sahayak.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sahayak.podspec; sourceTree = "<group>"; };
 		03A2A4E72C9CBD7E0066378B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		03C11ECB2D17F272000061AA /* CrossVerticalPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossVerticalPresentation.swift; sourceTree = "<group>"; };
+		03C11ED02D180686000061AA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,9 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				03A2A4E52C9CAACC0066378B /* Sahayak.podspec */,
+				03C11ED02D180686000061AA /* Package.swift */,
+				03C11ECF2D180671000061AA /* Tests */,
+				03C11ECE2D17FDB9000061AA /* Sources */,
 				0331030D2C6A7F48009BB7EC /* README.md */,
-				033FD55E2C67C96700705C97 /* Sahayak */,
-				033FD56A2C67C96800705C97 /* SahayakTests */,
 				033FD55D2C67C96700705C97 /* Products */,
 				033FD58B2C68CAC400705C97 /* Frameworks */,
 			);
@@ -279,6 +280,22 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		03C11ECE2D17FDB9000061AA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				033FD55E2C67C96700705C97 /* Sahayak */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		03C11ECF2D180671000061AA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				033FD56A2C67C96800705C97 /* SahayakTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -372,7 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0331030E2C6A7F48009BB7EC /* README.md in Resources */,
-				03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
