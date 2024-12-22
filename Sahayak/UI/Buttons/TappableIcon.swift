@@ -6,12 +6,12 @@
 import SwiftUI
 
 public struct TappableIcon: View {
-    var iconName: String
-    var iconWidth: CGFloat
-    var iconHeight: CGFloat
-    var isTappable: Bool
-    var accessibilityIdentifier: String?
-    var clickAction: EmptyClosure? /// use closure for callback
+    private let iconName: String
+    private let iconWidth: CGFloat
+    private let iconHeight: CGFloat
+    private let isTappable: Bool
+    private let accessibilityIdentifier: String?
+    private let clickAction: EmptyClosure? /// use closure for callback
     
     public var body: some View {
         Button(action: {
