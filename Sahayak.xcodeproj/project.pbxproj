@@ -46,6 +46,7 @@
 		03956D1E2C70E9B100DE8AC0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03956D1D2C70E9B100DE8AC0 /* Task.swift */; };
 		03A2A4E62C9CAACC0066378B /* Sahayak.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 03A2A4E52C9CAACC0066378B /* Sahayak.podspec */; };
 		03A2A4E82C9CBD820066378B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2A4E72C9CBD7E0066378B /* ApiClient.swift */; };
+		03C11ECC2D17F272000061AA /* CrossVerticalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C11ECB2D17F272000061AA /* CrossVerticalPresentation.swift */; };
 		03FD756A2C69180300406FC8 /* PixieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD75692C69180300406FC8 /* PixieCacheManager.swift */; };
 		03FD756C2C69184C00406FC8 /* PixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD756B2C69184C00406FC8 /* PixieImage.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		03956D1D2C70E9B100DE8AC0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		03A2A4E52C9CAACC0066378B /* Sahayak.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sahayak.podspec; sourceTree = "<group>"; };
 		03A2A4E72C9CBD7E0066378B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		03C11ECB2D17F272000061AA /* CrossVerticalPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossVerticalPresentation.swift; sourceTree = "<group>"; };
 		03FD75692C69180300406FC8 /* PixieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieCacheManager.swift; sourceTree = "<group>"; };
 		03FD756B2C69184C00406FC8 /* PixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixieImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 		033FD5762C67C9AC00705C97 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				03C11ECD2D17F4FF000061AA /* UIKit */,
 				033FD59E2C68E44F00705C97 /* Buttons */,
 				033FD5822C68C0FF00705C97 /* Textfield */,
 				033FD57D2C68BE2F00705C97 /* Navigator.swift */,
@@ -266,6 +269,14 @@
 				03587A1D2C6DFA070060D409 /* JWTDecodeError.swift */,
 			);
 			path = JWT;
+			sourceTree = "<group>";
+		};
+		03C11ECD2D17F4FF000061AA /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				03C11ECB2D17F272000061AA /* CrossVerticalPresentation.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +411,7 @@
 				033FD59D2C68E2C300705C97 /* SahayakButton.swift in Sources */,
 				033FD5A02C68E45E00705C97 /* TappableIcon.swift in Sources */,
 				033FD5962C68CC9400705C97 /* HTTPMethods.swift in Sources */,
+				03C11ECC2D17F272000061AA /* CrossVerticalPresentation.swift in Sources */,
 				033FD5882C68C1CB00705C97 /* Shapes.swift in Sources */,
 				033FD5A92C68FBE400705C97 /* CacheManager.swift in Sources */,
 				033FD57A2C68BC9B00705C97 /* String.swift in Sources */,
