@@ -104,7 +104,10 @@ private extension NetworkService {
         return requestHeaders
     }
     
-    func prepareUrlRequest(_ apiRequest: ApiRequest, _ apiFailure: @escaping(ApiErrorResponse)) -> URLRequest? {
+    func prepareUrlRequest(
+        _ apiRequest: ApiRequest,
+        _ apiFailure: @escaping(ApiErrorResponse)
+    ) -> URLRequest? {
         /// creating the actual Swift-Style API Request
         // Construct our web request.
         guard apiRequest.baseUrl.isNotBlank else {

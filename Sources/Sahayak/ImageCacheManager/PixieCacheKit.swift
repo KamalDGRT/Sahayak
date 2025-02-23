@@ -27,7 +27,10 @@ public class PixieCacheKit {
     /// ```swift
     /// PixieCacheKit.configure(directoryName: "CustomCache", imageFormat: .png)
     /// ```
-    public static func configure(directoryName: String, imageFormat: ImageFormat) {
+    public static func configure(
+        directoryName: String,
+        imageFormat: ImageFormat
+    ) {
         CacheManager.shared.cacheDirectoryName = directoryName
         CacheManager.shared.imageFormat = imageFormat
         CacheManager.shared.storageLocation = .fileManager

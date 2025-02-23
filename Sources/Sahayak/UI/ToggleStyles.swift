@@ -10,7 +10,10 @@ public struct CheckmarkToggleStyle: ToggleStyle {
     var onColor: Color
     var offColor: Color
     
-    public init(_ onColor: Color = Color.green, _ offColor: Color = Color.gray) {
+    public init(
+        _ onColor: Color = Color.green,
+        _ offColor: Color = Color.gray
+    ) {
         self.onColor = onColor
         self.offColor = offColor
     }
@@ -50,7 +53,10 @@ public struct CustomToggleStyle: ToggleStyle {
     var onColor: Color
     var offColor: Color
     
-    public init(_ onColor: Color = Color.green, _ offColor: Color = Color.gray) {
+    public init(
+        _ onColor: Color = Color.green,
+        _ offColor: Color = Color.gray
+    ) {
         self.onColor = onColor
         self.offColor = offColor
     }

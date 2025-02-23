@@ -6,7 +6,7 @@
 #if !os(macOS)
 import SwiftUI
 
-class SahayakButtonNotifier: ObservableObject {
+final class SahayakButtonNotifier: ObservableObject {
     var titleFont = SahayakFont("", 16.0, .black, .white)
     var backgroundColor: Color = .gray
     var height = 45.0
